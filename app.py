@@ -54,7 +54,6 @@ def main():
         st.write(f'{store_name}')
         # st.write(chunks)
  
- 
         
     #     if os.path.exists(f"{store_name}.pkl"):
     #         try:
