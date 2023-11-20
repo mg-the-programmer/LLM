@@ -56,20 +56,20 @@ def main():
  
  
         
-        if os.path.exists(f"{store_name}.pkl"):
-            try:
-                with open(f"{store_name}.pkl", "rb") as f:
-                    VectorStore = pickle.load(f)
-            except Exception as e:
-                print(f"Error during unpickling: {e}")
-    # st.write('Embeddings Loaded from the Disk')s
-        else:
-            embeddings = OpenAIEmbeddings()
-            VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
+    #     if os.path.exists(f"{store_name}.pkl"):
+    #         try:
+    #             with open(f"{store_name}.pkl", "rb") as f:
+    #                 VectorStore = pickle.load(f)
+    #         except Exception as e:
+    #             print(f"Error during unpickling: {e}")
+    # # st.write('Embeddings Loaded from the Disk')s
+    #     else:
+        embeddings = OpenAIEmbeddings()
+        VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
 
-            st.write(VectorStore)
-            with open(f"{store_name}.pkl", "wb") as f:
-                pickle.dump(VectorStore, f)
+            # st.write(VectorStore)
+            # with open(f"{store_name}.pkl", "wb") as f:
+            #     pickle.dump(VectorStore, f)
         # embeddings = OpenAIEmbeddings()
         # VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
  
